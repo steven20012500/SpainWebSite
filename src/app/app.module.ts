@@ -1,19 +1,29 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { BrowserModule } from '@angular/platform-browser';
+import { provideHttpClient, withFetch } from '@angular/common/http'; // Importa withFetch
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+import { CuestionarioComponent } from './cuestionario/cuestionario.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    MenuComponent,
+    CuestionarioComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideHttpClient(withFetch()) // Configura HttpClient
   ],
   bootstrap: [AppComponent]
 })

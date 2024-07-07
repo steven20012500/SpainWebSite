@@ -1,0 +1,46 @@
+<div class="container mx-auto mt-10 p-4">
+  <h1 class="text-4xl font-bold mb-8 text-center text-indigo-600">Cuestionario</h1>
+ <div #resultado2 class="mt-5">
+    <div *ngIf="resultado !== 0" class="mt-10 bg-green-100 border-t border-b border-l-2 border-r-2 border-green-500 text-green-700 px-4 py-3 rounded-lg shadow-md">
+      <p class="font-bold text-lg">Resultado:</p>
+      <p class="text-lg ml-2">Has obtenido una puntuación de {{ resultado }} sobre 5.</p>
+    </div>
+  </div>
+  
+  <form class="bg-white p-8 shadow-lg rounded-lg mt-4" (ngSubmit)="agregarCuestionario(cuestionarioForm)"  #cuestionarioForm="ngForm">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre</label>
+        <input class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombre" type="text" [(ngModel)]="cuestionario.nombre" name="nombre" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+        <input class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" [(ngModel)]="cuestionario.email" name="email" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="genero">Género</label>
+        <select class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="genero" [(ngModel)]="cuestionario.genero" name="genero" required>
+          <option value="">Seleccione una opción</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="pais">País</label>
+        <input class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pais" type="text" [(ngModel)]="cuestionario.pais" name="pais" required>
+      </div>
+    </div>
+
+    <div class="mb-8" *ngFor="let pregunta of preguntas; let i = index">
+      <label class="block text-gray-700 text-sm font-bold mb-2">{{ pregunta.pregunta }}</label>
+      <input class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" [(ngModel)]="pregunta.respuesta" name="respuesta{{ i }}" >
+    </div>
+
+    <div class="flex items-center justify-between mb-8">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline" type="button" (click)="calcularResultado()">Calcular Resultado</button>
+      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline" type="submit">Enviar</button>
+    </div>
+  </form>
+ 
+</div>

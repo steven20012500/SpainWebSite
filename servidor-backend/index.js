@@ -11,7 +11,7 @@ app.use(express.json());
 // app.use(morgan('dev')); monitoreo de peticiones
 //cors para permitir la conexion con el front end
 app.use(cors());
-//app.use('/api/',require('./routes/server.routes'));
+app.use('/api/',require('./routes/server.routes'));
 app.use(bodyParser.json());
 
 
