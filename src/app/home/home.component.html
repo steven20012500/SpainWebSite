@@ -1,1 +1,51 @@
-<p>home works!</p>
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - España para Jóvenes</title>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+ <!-- Hero Section -->
+<header class="bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('https://wallpapercave.com/wp/wp3766474.jpg');">
+    <div class="container mx-auto text-center text-white px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Descubre España</h1>
+        <p class="text-lg md:text-xl mb-8">Bienvenido/a a un viaje cultural por España</p>
+        <a routerLink="/cuestionario" routerLinkActive="active" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">Participa en la Encuesta</a>
+    </div>
+</header>
+
+    <!-- Sección de Contenido Principal -->
+    <main class="container mx-auto py-12">
+
+        <!-- Sección de Información -->
+        <section id="informacion" class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-x-8 md:space-y-0 mb-12">
+            <div class="max-w-md">
+                <h2 class="text-3xl font-bold mb-4">Descubre España</h2>
+                <p class="text-lg leading-relaxed">Explora la belleza de España a través de su cultura, gastronomía, deportes y mucho más.</p>
+            </div>
+            <div class="max-w-md">
+                <img src="https://previews.123rf.com/images/incomible/incomible1705/incomible170500015/77105571-dise%C3%B1o-de-fondo-de-espa%C3%B1a-s%C3%ADmbolos-y-objetos-tradicionales-espa%C3%B1oles.jpg" alt="Imagen representativa de España" class="rounded-lg shadow-lg">
+            </div>
+        </section>
+
+  <!-- Sección de Más Información -->
+<section id="mas-informacion" class="bg-gray-200 p-8 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4 text-center">Descubre más sobre España</h2>
+    <p class="text-lg text-center">Sumérgete en la cultura fascinante de España y descubre todo lo que este hermoso país tiene para ofrecer.</p>
+    <a routerLink="/informacion" routerLinkActive="active" class="block text-center mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">Explorar Más</a>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 text-center py-4">
+        <div class="container mx-auto">
+            <p>&copy; 2024 España para Jóvenes. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+

@@ -1,0 +1,26 @@
+<div class="container mx-auto py-12">
+    <section id="reporte" class="bg-gray-200 p-8 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold mb-4 text-center">Reporte de Cuestionarios</h2>
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Género</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">País</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nota</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr *ngFor="let cuestionario of cuestionarios">
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ cuestionario.nombre }}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ cuestionario.email }}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ cuestionario.genero }}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ cuestionario.pais }}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ cuestionario.nota }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  

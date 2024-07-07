@@ -1,11 +1,17 @@
 const Cuestionario = require('../models/cuestionario.models');
+require('fs');
 
 const cuestionarioController = {};
 
 cuestionarioController.getCuestionarios = async (req, res) => {
-    const cuestionarios = await Cuestionario.find();
-    res.json(cuestionarios);
-}
+    try {
+      const cuestionarios = await Cuestionario.find();
+      res.status(200).json(cuestionarios);
+    } catch (error) {
+      console.error('Error al obtener los cuestionarios:', error);
+      res.status(500).json({ message: 'Error al obtener los cuestionarios' });
+    }
+  };
 
 cuestionarioController.addCuestionario = async (req, res) => {
     try {
@@ -17,6 +23,6 @@ cuestionarioController.addCuestionario = async (req, res) => {
         console.error('Error al guardar cuestionario:', error);
         res.status(500).json({ message: 'Error interno al guardar cuestionario' });
     }
-}
+};
 
 module.exports = cuestionarioController;

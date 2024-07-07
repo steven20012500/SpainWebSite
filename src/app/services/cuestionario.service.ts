@@ -7,14 +7,10 @@ import { Cuestionario } from '../class/cuestionario';
   providedIn: 'root'
 })
 export class CuestionarioService {
-  private apiUrl = 'https://localhost:3000/api/verCuestionarios'; 
-  private apiUrl2 = 'http://localhost:3000/api/addCuestionario';
+  private apiUrl = 'http://localhost:3000/api/addCuestionario';
   constructor(private http: HttpClient) { }
-  obtenerCuestionarios(): Observable<any>{
-    return this.http.get<Cuestionario[]>(this.apiUrl);
-  }
 
   agregarCuestionario(cuestionario: any) {
-    return this.http.post(this.apiUrl2, cuestionario);
+    return this.http.post(this.apiUrl, cuestionario);
   }
 }
